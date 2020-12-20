@@ -19,9 +19,9 @@ const pusher = new Pusher({
 
 app.set("PORT", process.env.PORT || 5000);
 
-app.post("/message", (req, res) => {
+app.post("/questions", (req, res) => {
   const payload = req.body;
-  pusher.trigger("chat", "message", payload);
+  pusher.trigger("chat", "questions", payload);
   res.send(payload);
 });
 
