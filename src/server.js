@@ -21,13 +21,13 @@ app.set("PORT", process.env.PORT || 5000);
 
 app.post("/questions", (req, res) => {
   const payload = req.body;
-  pusher.trigger("questions", payload);
+  pusher.trigger("chat", "questions", payload);
   res.send(payload);
 });
 
 app.post("/user", (req, res) => {
   const payload = req.body;
-  pusher.trigger("user", "answer", payload);
+  pusher.trigger("chat", "answer", payload);
   res.send(payload);
 });
 
